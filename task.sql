@@ -23,7 +23,7 @@ CREATE TABLE Orders (
     ID INT AUTO_INCREMENT,
     CustomerID INT,
     Date DATE,
-    PRIMARY KEY (ID)
+    PRIMARY KEY (ID),
     FOREIGN KEY (CustomerID) REFERENCES Customers(ID) ON DELETE SET NULL
 );
 
@@ -31,7 +31,7 @@ CREATE TABLE OrderItems (
     ID INT AUTO_INCREMENT,
     OrderID INT,
     ProductID INT,
-    PRIMARY KEY (ID)
+    PRIMARY KEY (ID),Orders_ibfk_1
     FOREIGN KEY (OrderID) REFERENCES Orders(ID) ON DELETE SET NULL,
     FOREIGN KEY (ProductID) REFERENCES Products(ID) ON DELETE SET NULL
 );
